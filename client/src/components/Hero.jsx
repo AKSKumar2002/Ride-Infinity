@@ -34,14 +34,14 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="py-20 px-4 flex flex-col items-center justify-center gap-10 bg-light text-center"
+      className="py-20 px-4 flex flex-col items-center justify-center gap-10 bg-light text-center overflow-hidden"
     >
       {/* Heading */}
       <motion.h1
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-3xl md:text-5xl font-semibold flex items-center justify-center gap-2"
+        className="text-3xl md:text-5xl font-semibold flex items-center justify-center gap-2 flex-wrap"
       >
         Need a
         <span className="relative w-[100px] h-[50px] md:w-[130px] md:h-[60px] overflow-hidden inline-block align-middle">
@@ -67,14 +67,14 @@ const Hero = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="flex flex-row items-end justify-center gap-6 md:gap-10 w-full max-w-[95vw]"
+        className="flex flex-wrap items-end justify-center gap-6 md:gap-10 w-full max-w-[95vw] overflow-hidden"
       >
         {/* Left Bike */}
-        <div className="flex justify-center items-end w-1/3">
+        <div className="flex justify-center items-end w-full sm:w-1/3">
           <motion.img
             src={assets.bmw}
             alt="Left bike"
-            className="h-44 sm:h-52 md:h-60 lg:h-64 scale-x-[-1] object-contain"
+            className="h-36 sm:h-52 md:h-60 lg:h-64 scale-x-[-1] object-contain"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -82,11 +82,11 @@ const Hero = () => {
         </div>
 
         {/* Center Bike */}
-        <div className="flex justify-center items-end w-1/3">
+        <div className="flex justify-center items-end w-full sm:w-1/3">
           <motion.img
             src={assets.bullet}
             alt="Center bike"
-            className="h-44 sm:h-52 md:h-60 lg:h-64 object-contain"
+            className="h-36 sm:h-52 md:h-60 lg:h-64 object-contain"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7 }}
@@ -94,11 +94,11 @@ const Hero = () => {
         </div>
 
         {/* Right Bike */}
-        <div className="flex justify-center items-end w-1/3">
+        <div className="flex justify-center items-end w-full sm:w-1/3">
           <motion.img
             src={assets.kawasaki}
             alt="Right bike"
-            className="h-44 sm:h-52 md:h-60 lg:h-64 object-contain"
+            className="h-36 sm:h-52 md:h-60 lg:h-64 object-contain"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
