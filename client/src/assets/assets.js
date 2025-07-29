@@ -43,6 +43,7 @@ import car_image4 from "./car_image4.png"
 import logo1 from './owner_logo.jpeg'
 import bmw from './bmw-removebg-preview.png'
 import kawasaki from './kawasaki-removebg-preview.png'
+import bullet from './bullet.png'
 
 
 export const cityList = ['New York', 'Los Angeles', 'Houston', 'Chicago']
@@ -92,7 +93,8 @@ export const assets = {
     car_image4,
     logo1,
     bmw,
-    kawasaki
+    kawasaki,
+    bullet
 }
 
 export const menuLinks = [
