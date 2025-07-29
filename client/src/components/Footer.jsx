@@ -31,7 +31,7 @@ const Footer = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
 
                     className='max-w-80 mt-3'>
-                        Premium car rental service with a wide selection of luxury and everyday vehicles for all your driving needs.
+                        Premium Bike rental service with a wide selection of luxury and everyday vehicles for all your driving needs.
                     </motion.p>
                     <motion.div 
                         initial={{ opacity: 0 }}
@@ -76,10 +76,10 @@ const Footer = () => {
                 <div>
                     <h2 className='text-base font-medium text-gray-800 uppercase'>Contact</h2>
                     <ul className='mt-3 flex flex-col gap-1.5'>
-                        <li>1234 Luxury Drive</li>
-                        <li>San Francisco, CA 94107</li>
-                        <li>+1 234 567890</li>
-                        <li>info@example.com</li>
+                        <li>Prince, </li>
+                        <li>Saravanampatti, 641025</li>
+                        <li>+91 84286 18770</li>
+                        <li>prince842861@gmail.com</li>
                     </ul>
                 </div>
 
@@ -97,7 +97,7 @@ const Footer = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 
             className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                <p>© {new Date().getFullYear()} Brand. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Ride Infinity | All rights reserved.</p>
                 <ul className='flex items-center gap-4'>
                     <li><a href="#">Privacy</a></li>
                     <li>|</li>
