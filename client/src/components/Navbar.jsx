@@ -1,31 +1,41 @@
-import React, { useState } from 'react'
-import { assets, menuLinks } from '../assets/assets'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useAppContext } from '../context/AppContext'
-import toast from 'react-hot-toast'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from 'react';
+import { assets, menuLinks } from '../assets/assets';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
+import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
+  const { setShowLogin, user, logout, isOwner, axios, setIsOwner } = useAppContext();
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const { setShowLogin, user, logout, isOwner, axios, setIsOwner } = useAppContext()
-
-  const location = useLocation()
-  const [open, setOpen] = useState(false)
-  const navigate = useNavigate()
+  // 🔒 Lock body scroll when menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
   const changeRole = async () => {
     try {
-      const { data } = await axios.post('/api/owner/change-role')
+      const { data } = await axios.post('/api/owner/change-role');
       if (data.success) {
-        setIsOwner(true)
-        toast.success(data.message)
+        setIsOwner(true);
+        toast.success(data.message);
       } else {
-        toast.error(data.message)
+        toast.error(data.message);
       }
     } catch (error) {
-      toast.error(error.message)
+      toast.error(error.message);
     }
-  }
+  };
 
   return (
     <motion.div
@@ -36,6 +46,7 @@ const Navbar = () => {
       flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 
       text-gray-800 sticky top-0 z-50 shadow-md rounded-b-2xl transition-all`}
     >
+      {/* Logo */}
       <Link to='/'>
         <motion.img
           whileHover={{ scale: 1.05 }}
@@ -48,20 +59,26 @@ const Navbar = () => {
 
       {/* Navigation Links & Controls */}
       <div
-        className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 
-        right-0 flex flex-col sm:flex-row items-start sm:items-center gap-6 
-        sm:gap-10 max-sm:p-6 max-sm:z-40 max-sm:transition-all duration-300 
-        ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}
-        ${location.pathname === "/" ? "bg-white/40" : "bg-white/50"} 
+        className={`max-sm:fixed max-sm:top-16 max-sm:right-0 
+        max-sm:w-full max-sm:h-[calc(100dvh-4rem)] max-sm:overflow-y-auto 
+        flex flex-col sm:flex-row items-start sm:items-center gap-6 
+        sm:gap-10 max-sm:p-6 max-sm:z-40 max-sm:transition-transform duration-300 
+        ${open ? 'max-sm:translate-x-0' : 'max-sm:translate-x-full'}
+        ${location.pathname === '/' ? 'bg-white/40' : 'bg-white/50'}
         max-sm:backdrop-blur-lg sm:static sm:bg-transparent`}
       >
+        {/* Menu Links */}
         {menuLinks.map((link, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link to={link.path} className="text-base font-medium text-gray-700 hover:text-primary transition-all">
+            <Link
+              to={link.path}
+              className="text-base font-medium text-gray-700 hover:text-primary transition-all"
+              onClick={() => setOpen(false)} // 👈 closes menu when link is clicked
+            >
               {link.name}
             </Link>
           </motion.div>
@@ -89,20 +106,22 @@ const Navbar = () => {
               Dashboard
             </motion.button>
           )}
-
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => { user ? logout() : setShowLogin(true) }}
+            onClick={() => {
+              user ? logout() : setShowLogin(true);
+              setOpen(false); // 👈 close menu after login/logout
+            }}
             className="cursor-pointer px-6 py-2 bg-primary hover:bg-primary-dull 
-              transition-all text-white rounded-lg shadow-md"
+            transition-all text-white rounded-lg shadow-md"
           >
             {user ? 'Logout' : 'Login'}
           </motion.button>
         </div>
       </div>
 
-      {/* Hamburger */}
+      {/* Hamburger Menu Button */}
       <motion.button
         whileTap={{ scale: 0.9 }}
         className='sm:hidden cursor-pointer'
@@ -112,7 +131,7 @@ const Navbar = () => {
         <img src={open ? assets.close_icon : assets.menu_icon} alt="menu" />
       </motion.button>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

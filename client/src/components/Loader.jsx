@@ -11,7 +11,10 @@ const Loader = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen z-[9999] flex flex-col justify-center items-center bg-white overflow-hidden">
+    <div
+    className="fixed top-0 left-0 w-screen h-[100dvh] z-[9999] flex flex-col justify-center items-center bg-white overflow-hidden"
+  >
+  
 
       {/* Glassy Logo Box */}
       <motion.div
