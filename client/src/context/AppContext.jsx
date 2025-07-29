@@ -18,6 +18,8 @@ export const AppProvider = ({ children })=>{
     const [showLogin, setShowLogin] = useState(false)
     const [pickupDate, setPickupDate] = useState('')
     const [returnDate, setReturnDate] = useState('')
+    const [bikeSearchInput, setBikeSearchInput] = useState('')
+
 
 const [bikes, setBikes] = useState([])
 
@@ -77,7 +79,8 @@ const [bikes, setBikes] = useState([])
     const value = {
         navigate, currency, axios, user, setUser,
         token, setToken, isOwner, setIsOwner, fetchUser, showLogin, setShowLogin, logout, fetchCars,  bikes, setBikes, 
-        pickupDate, setPickupDate, returnDate, setReturnDate
+        pickupDate, setPickupDate, returnDate, setReturnDate,bikeSearchInput, setBikeSearchInput
+
     }
 
     return (
