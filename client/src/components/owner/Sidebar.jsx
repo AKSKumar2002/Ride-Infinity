@@ -34,7 +34,7 @@ const Sidebar = () => {
 
         <div className='group relative'>
             <label htmlFor="image">
-                <img src={image ? URL.createObjectURL(image) : user?.image ||  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=300"} alt="" className='h-9 md:h-14 w-9 md:w-14 rounded-full mx-auto'/>
+                <img src={image ? URL.createObjectURL(image) : user?.image ||  "https://images.unsplash.com/photo-1753756944436-f4bd2fde4521?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} alt="" className='h-9 md:h-14 w-9 md:w-14 rounded-full mx-auto'/>
                 <input type="file" id='image' accept="image/*" hidden onChange={e=> setImage(e.target.files[0])}/>
 
                 <div className='absolute hidden top-0 right-0 left-0 bottom-0 bg-black/10 rounded-full group-hover:flex items-center justify-center cursor-pointer'>
