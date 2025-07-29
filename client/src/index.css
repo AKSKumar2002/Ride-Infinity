@@ -12,7 +12,3 @@
   --color-light: #F1F5F9;
   --color-borderColor: #c4c7d2;
 }
-
-html, body {
-  perspective: 1000px;
-}

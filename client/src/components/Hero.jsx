@@ -13,7 +13,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setFlipIndex((prev) => (prev + 1) % flippingWords.length);
-    }, 2000); // Flip every 2 seconds
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -34,7 +34,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="h-screen flex flex-col items-center justify-center gap-10 bg-light text-center"
+      className="py-20 px-4 flex flex-col items-center justify-center gap-10 bg-light text-center"
     >
       {/* Heading */}
       <motion.h1
@@ -63,49 +63,48 @@ const Hero = () => {
       </motion.h1>
 
       {/* 3 Bikes Layout */}
-<motion.div
-  initial={{ y: 100, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.8, delay: 0.6 }}
-  className="flex flex-row items-end justify-center gap-6 md:gap-10 w-full max-w-[95vw] px-4"
->
-  {/* Left Bike */}
-  <div className="flex justify-center items-end w-1/3">
-    <motion.img
-      src={assets.bmw}
-      alt="Left bike"
-      className="h-44 sm:h-52 md:h-60 lg:h-64 scale-x-[-1] object-contain"
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: 0.5 }}
-    />
-  </div>
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="flex flex-row items-end justify-center gap-6 md:gap-10 w-full max-w-[95vw]"
+      >
+        {/* Left Bike */}
+        <div className="flex justify-center items-end w-1/3">
+          <motion.img
+            src={assets.bmw}
+            alt="Left bike"
+            className="h-44 sm:h-52 md:h-60 lg:h-64 scale-x-[-1] object-contain"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          />
+        </div>
 
-  {/* Center Bike */}
-  <div className="flex justify-center items-end w-1/3">
-    <motion.img
-      src={assets.bullet}
-      alt="Center bike"
-      className="h-44 sm:h-52 md:h-60 lg:h-64 object-contain"
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.7 }}
-    />
-  </div>
+        {/* Center Bike */}
+        <div className="flex justify-center items-end w-1/3">
+          <motion.img
+            src={assets.bullet}
+            alt="Center bike"
+            className="h-44 sm:h-52 md:h-60 lg:h-64 object-contain"
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          />
+        </div>
 
-  {/* Right Bike */}
-  <div className="flex justify-center items-end w-1/3">
-    <motion.img
-      src={assets.kawasaki}
-      alt="Right bike"
-      className="h-44 sm:h-52 md:h-60 lg:h-64 object-contain"
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ delay: 0.5 }}
-    />
-  </div>
-</motion.div>
-
+        {/* Right Bike */}
+        <div className="flex justify-center items-end w-1/3">
+          <motion.img
+            src={assets.kawasaki}
+            alt="Right bike"
+            className="h-44 sm:h-52 md:h-60 lg:h-64 object-contain"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          />
+        </div>
+      </motion.div>
     </motion.div>
   );
 };

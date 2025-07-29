@@ -6,20 +6,20 @@ import { motion } from 'motion/react';
 const Testimonial = () => {
 
     const testimonials = [
-        { name: "Ajith", 
-          location: "R.S Puram, Coimbatore", 
+        { name: "Emma Rodriguez", 
+          location: "Barcelona, Spain", 
           image: assets.testimonial_image_1, 
-          testimonial: "I've rented bikes from various companies, but the experience with Ride Infinity was exceptional." 
+          testimonial: "I've rented cars from various companies, but the experience with CarRental was exceptional." 
         },
-        { name: "Prince", 
-          location: "Vadavalli, Coimbatore", 
+        { name: "John Smith", 
+          location: "New York, USA", 
           image: assets.testimonial_image_2, 
-          testimonial: "Ride Infinity made my trip so much easier. The bike was delivered right to my door, and the customer service was fantastic!" 
+          testimonial: "CarRental made my trip so much easier. The car was delivered right to my door, and the customer service was fantastic!" 
         },
-        { name: "Puvina", 
-          location: "Udumalpet, Tamilnadu", 
-          image: assets.testimonial_image_11, 
-          testimonial: "I highly recommend Ride Infinity! Their fleet is amazing, and I always feel like I'm getting the best deal with excellent service." 
+        { name: "Ava Johnson", 
+          location: "Sydney, Australia", 
+          image: assets.testimonial_image_1, 
+          testimonial: "I highly recommend CarRental! Their fleet is amazing, and I always feel like I'm getting the best deal with excellent service." 
         }
     ];
 

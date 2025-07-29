@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.jpeg'; // Adjust path if needed
+import logo from '../assets/logo.jpeg'; // Adjust if needed
 
 const Loader = ({ onComplete }) => {
   useEffect(() => {
@@ -32,8 +32,8 @@ const Loader = ({ onComplete }) => {
         />
       </motion.div>
 
-      {/* Solid Black Spinner */}
-      <div className="w-14 h-14 rounded-full border-4 border-t-transparent border-b-transparent border-l-black border-r-black animate-spin"></div>
+      {/* Black & Brown Gradient Spinner */}
+      <div className="w-14 h-14 rounded-full border-4 border-t-transparent border-b-transparent border-l-[6px] border-r-[6px] border-l-black border-r-[#5C4033] animate-spin"></div>
     </div>
   );
 };
