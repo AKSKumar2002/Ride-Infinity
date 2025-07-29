@@ -1,22 +1,27 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.jpeg'; // adjust if needed
+import logo from '../assets/logo.jpeg'; // Update if needed
 
 const Loader = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
     }, 4000);
-    return () => clearTimeout(timer);
+
+    // 🔒 Disable scroll while loader is showing
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = ''; // Re-enable scroll
+    };
   }, [onComplete]);
 
   return (
     <div
-    className="fixed top-0 left-0 w-screen h-[100dvh] z-[9999] flex flex-col justify-center items-center bg-white overflow-hidden"
-  >
-  
-
-      {/* Glassy Logo Box */}
+      className="fixed top-0 left-0 w-screen h-[100dvh] z-[9999] flex flex-col justify-center items-center bg-white"
+    >
+      {/* Logo Box */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
