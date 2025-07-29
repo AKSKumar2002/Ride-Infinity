@@ -14,13 +14,13 @@ const Home = () => {
       {loading ? (
         <Loader onComplete={() => setLoading(false)} />
       ) : (
-        <>
+        <div className="min-h-screen overflow-x-hidden bg-white">
           <Hero />
           <FeaturedSection />
           <Banner />
           <Testimonial />
           <Newsletter />
-        </>
+        </div>
       )}
     </>
   );
