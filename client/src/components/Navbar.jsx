@@ -57,13 +57,13 @@ const Navbar = () => {
 
       <div
         className={`max-sm:fixed max-sm:top-20 max-sm:right-0 
-  max-sm:w-full max-sm:h-[calc(100dvh-5rem)] max-sm:overflow-y-auto 
-  flex flex-col sm:flex-row items-start sm:items-center gap-6 
-  sm:gap-10 max-sm:p-6 max-sm:z-40 max-sm:transition-transform duration-300 
-  ${open ? 'max-sm:translate-x-0' : 'max-sm:translate-x-full'}
-  bg-white/100 max-sm:backdrop-blur-lg sm:static sm:bg-white/100`}
+        max-sm:w-full max-sm:h-[calc(100dvh-5rem)] max-sm:overflow-y-auto 
+        flex flex-col sm:flex-row items-start sm:items-center gap-6 
+        sm:gap-10 max-sm:p-6 max-sm:z-40 max-sm:transition-transform duration-300 
+        ${open ? 'max-sm:translate-x-0' : 'max-sm:translate-x-full'}
+        ${location.pathname === '/' ? 'bg-white/100' : 'bg-white/100'}
+        max-sm:backdrop-blur-lg sm:static sm:bg-transparent`}
       >
-
         {menuLinks.map((link, index) => (
           <motion.div key={index} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
