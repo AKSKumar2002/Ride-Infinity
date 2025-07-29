@@ -62,42 +62,47 @@ const Hero = () => {
         ?
       </motion.h1>
 
-      {/* 3 Bikes Layout: Centered */}
-<motion.div
+      <motion.div
   initial={{ y: 100, opacity: 0 }}
   animate={{ y: 0, opacity: 1 }}
   transition={{ duration: 0.8, delay: 0.6 }}
-  className="flex items-end justify-center gap-6 md:gap-10 w-full max-w-6xl px-4 mx-auto"
+  className="flex items-end justify-center gap-6 w-full max-w-6xl px-4 mx-auto"
 >
   {/* Left Bike */}
-  <motion.img
-    src={assets.bmw}
-    alt="Left bike"
-    className="h-40 sm:h-48 md:h-60 lg:h-64 scale-x-[-1] object-contain"
-    initial={{ x: -100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ delay: 0.5 }}
-  />
+  <div className="w-1/3 flex justify-center">
+    <motion.img
+      src={assets.bmw}
+      alt="Left bike"
+      className="h-40 sm:h-48 md:h-60 lg:h-64 scale-x-[-1] object-contain"
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ delay: 0.5 }}
+    />
+  </div>
 
   {/* Center Bike */}
-  <motion.img
-    src={assets.bullet}
-    alt="Center bike"
-    className="h-40 sm:h-48 md:h-60 lg:h-64 object-contain"
-    initial={{ y: 100, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ delay: 0.7 }}
-  />
+  <div className="w-1/3 flex justify-center">
+    <motion.img
+      src={assets.bullet}
+      alt="Center bike"
+      className="h-40 sm:h-48 md:h-60 lg:h-64 object-contain"
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.7 }}
+    />
+  </div>
 
   {/* Right Bike */}
-  <motion.img
-    src={assets.kawasaki}
-    alt="Right bike"
-    className="h-40 sm:h-48 md:h-60 lg:h-64 object-contain"
-    initial={{ x: 100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ delay: 0.5 }}
-  />
+  <div className="w-1/3 flex justify-center">
+    <motion.img
+      src={assets.kawasaki}
+      alt="Right bike"
+      className="h-40 sm:h-48 md:h-60 lg:h-64 object-contain"
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ delay: 0.5 }}
+    />
+  </div>
 </motion.div>
 
     </motion.div>
