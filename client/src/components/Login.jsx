@@ -11,35 +11,24 @@ const Login = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
 
-    const onSubmitHandler = async (event) => {
-        event.preventDefault();
-        // Frontend validation
-        if (state === "register") {
-            if (!name.trim() || !email.trim() || !password.trim()) {
-                toast.error("Please fill all fields");
-                return;
-            }
-        } else {
-            if (!email.trim() || !password.trim()) {
-                toast.error("Please fill all fields");
-                return;
-            }
-        }
+    const onSubmitHandler = async (event)=>{
         try {
-            const payload = state === "register" ? { name, email, password } : { email, password };
-            const { data } = await axios.post(`/api/user/${state}`, payload);
+            event.preventDefault();
+            const {data} = await axios.post(`/api/user/${state}`, {name, email, password})
 
             if (data.success) {
-                navigate('/');
-                setToken(data.token);
-                localStorage.setItem('token', data.token);
-                setShowLogin(false);
-            } else {
-                toast.error(data.message);
+                navigate('/')
+                setToken(data.token)
+                localStorage.setItem('token', data.token)
+                setShowLogin(false)
+            }else{
+                toast.error(data.message)
             }
+
         } catch (error) {
-            toast.error(error.message);
+            toast.error(error.message)
         }
+        
     }
 
   return (
