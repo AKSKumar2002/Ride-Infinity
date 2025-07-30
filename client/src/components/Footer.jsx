@@ -79,7 +79,7 @@ const Footer = () => {
                         <li>Prince,</li>
                         <li>Saravanampatti, Coimbatore - 025</li>
                         <li>+91 84286 18770</li>
-                        <li>prince842861!gmail.com</li>
+                        <li>prince842861@gmail.com</li>
                     </ul>
                 </div>
 
