@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.jpeg'; // Update if needed
+import logo from '../assets/logo.jpeg';
+import wheel from '../assets/wheel.png';
 
 const Loader = ({ onComplete }) => {
   useEffect(() => {
@@ -37,8 +38,19 @@ const Loader = ({ onComplete }) => {
         />
       </motion.div>
 
-      {/* Spinner */}
-      <div className="w-14 h-14 rounded-full border-4 border-t-transparent border-b-transparent border-l-[6px] border-r-[6px] border-l-black border-r-[#5C4033] animate-spin"></div>
+      {/* Bike Wheel Loader */}
+      <div className="flex flex-col items-center">
+        <motion.img
+          src={wheel}
+          alt="Bike Wheel Loader"
+          className="h-20 w-20 object-contain"
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+          style={{ filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.25))' }}
+        />
+        <span className="mt-4 text-lg font-semibold text-[#5C4033] tracking-wide"></span>
+      </div>
     </div>
   );
 };
