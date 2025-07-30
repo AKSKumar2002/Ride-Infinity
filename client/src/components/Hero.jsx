@@ -34,7 +34,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="py-20 px-4 flex flex-col items-center justify-center gap-10 bg-light text-center overflow-x-hidden"
+      className="py-20 px-4 flex flex-col items-center justify-center gap-10 bg-light text-center overflow-x-hidden w-full max-w-full"
     >
       {/* Heading */}
       <motion.h1

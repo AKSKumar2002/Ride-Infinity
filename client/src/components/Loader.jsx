@@ -20,7 +20,8 @@ const Loader = ({ onComplete }) => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-screen h-[100dvh] z-[9999] flex flex-col justify-center items-center bg-white"
+      className="fixed top-0 left-0 w-screen h-[100dvh] z-[9999] flex flex-col justify-center items-center bg-white overflow-hidden touch-none"
+      style={{ overscrollBehavior: 'none', WebkitOverflowScrolling: 'auto' }}
     >
       {/* Logo Box */}
       <motion.div
