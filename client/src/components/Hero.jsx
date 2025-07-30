@@ -41,11 +41,11 @@ const Hero = () => {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-3xl md:text-5xl font-semibold flex items-center justify-center gap-2"
+        className="text-3xl md:text-5xl font-semibold flex items-center justify-center gap-0"
       >
         Need a
         <span
-          className="relative flex items-center justify-center w-[100px] h-[50px] md:w-[130px] md:h-[60px] overflow-hidden"
+          className="relative flex items-center justify-center w-[90px] h-[50px] md:w-[120px] md:h-[60px] overflow-hidden mx-1"
         >
           <AnimatePresence mode="wait">
             <motion.span
