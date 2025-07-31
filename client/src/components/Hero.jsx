@@ -45,7 +45,8 @@ const Hero = () => {
       >
         Need a
         <span
-          className="relative flex items-center justify-center w-[90px] h-[50px] md:w-[120px] md:h-[60px] overflow-hidden mx-1"
+          className="relative flex items-center justify-center w-[80px] h-[50px] md:w-[100px] md:h-[60px] overflow-hidden mx-1"
+          style={{ lineHeight: 1 }}
         >
           <AnimatePresence mode="wait">
             <motion.span
@@ -54,8 +55,14 @@ const Hero = () => {
               animate={{ rotateX: 0, opacity: 1 }}
               exit={{ rotateX: -90, opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="absolute inset-0 flex items-center justify-center font-bold text-amber-500 text-3xl md:text-5xl leading-tight"
-              style={{ backfaceVisibility: 'hidden', height: '100%' }}
+              className="absolute inset-0 flex items-center justify-center font-bold text-amber-500 text-3xl md:text-5xl"
+              style={{
+                backfaceVisibility: 'hidden',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
               {flippingWords[flipIndex]}
             </motion.span>
